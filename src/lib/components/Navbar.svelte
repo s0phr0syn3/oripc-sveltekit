@@ -9,14 +9,17 @@
 			title: 'Insurance & Billing',
 			href: '/insurance-and-billing',
 			sublinks: [
-				{ title: 'Participating Insurance Plans', href: '/insurance-and-billing/participating-insurance-plans' },
+				{
+					title: 'Participating Insurance Plans',
+					href: '/insurance-and-billing/participating-insurance-plans'
+				},
 				{ title: 'Understanding My Bill', href: '/insurance-and-billing/understanding-my-bill' },
-				{ title: 'Pay My Bill', href: '/insurance-and-billing/pay-my-bill' },
-			],
+				{ title: 'Pay My Bill', href: '/insurance-and-billing/pay-my-bill' }
+			]
 		},
 		{ title: 'Appointments & Forms', href: '/appointments-and-forms' },
 		{ title: 'Patient Education', href: '/patient-education' },
-		{ title: 'Contact Us', href: '/contact-us' },
+		{ title: 'Contact Us', href: '/contact-us' }
 	];
 
 	function toggleMenu() {
@@ -35,13 +38,13 @@
 </script>
 
 <nav class="bg-white text-black shadow-md">
-	<div class="container mx-auto flex justify-between items-center p-4">
+	<div class="container mx-auto flex items-center justify-between p-4">
 		<a href="/" class="flex-shrink-0">
 			<img src="/images/logo.png" alt="Logo" class="h-24" />
 		</a>
 
 		<button
-			class="lg:hidden text-black p-2 rounded-md"
+			class="rounded-md p-2 text-black lg:hidden"
 			on:click={toggleMenu}
 			aria-label="Toggle navigation"
 		>
@@ -52,22 +55,27 @@
 				viewBox="0 0 24 24"
 				stroke="currentColor"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16m-7 6h7"
+				/>
 			</svg>
 		</button>
 
 		<ul
 			class={`${
-        isMenuOpen ? 'block' : 'hidden'
-      } lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 items-start lg:items-center w-full lg:w-auto mt-4 lg:mt-0`}
+				isMenuOpen ? 'block' : 'hidden'
+			} mt-4 w-full flex-col items-start space-y-4 lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:space-x-4 lg:space-y-0`}
 		>
 			{#each navLinks as link}
-				<li class="relative group">
+				<li class="group relative">
 					<!-- Dropdown Link -->
 					{#if link.sublinks}
 						<button
 							on:click={() => toggleDropdown(link.title)}
-							class="lg:inline-flex px-4 py-2 text-sm hover:text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent focus:outline-none w-full lg:w-auto flex justify-between items-center"
+							class="flex w-full items-center justify-between px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-700 focus:outline-none lg:inline-flex lg:w-auto lg:hover:bg-transparent"
 							aria-expanded={openDropdown === link.title ? 'true' : 'false'}
 							aria-haspopup="menu"
 						>
@@ -79,12 +87,17 @@
 								viewBox="0 0 24 24"
 								stroke="currentColor"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19 9l-7 7-7-7"
+								/>
 							</svg>
 						</button>
 						{#if openDropdown === link.title}
 							<ul
-								class="absolute left-0 top-full bg-white shadow-lg mt-2 rounded-md w-full lg:w-48 py-2 z-10"
+								class="absolute left-0 top-full z-10 mt-2 w-full rounded-md bg-white py-2 shadow-lg lg:w-48"
 							>
 								{#each link.sublinks as sublink}
 									<li>
@@ -93,7 +106,7 @@
 											class="block px-4 py-2 text-sm hover:bg-gray-200 hover:text-gray-700"
 											on:click={closeMenu}
 										>
-										{sublink.title}
+											{sublink.title}
 										</a>
 									</li>
 								{/each}
@@ -103,10 +116,10 @@
 						<!-- Normal Links -->
 						<a
 							href={link.href}
-							class="block lg:inline-block px-4 py-2 text-sm hover:text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent focus:outline-none"
+							class="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-700 focus:outline-none lg:inline-block lg:hover:bg-transparent"
 							on:click={closeMenu}
 						>
-						{link.title}
+							{link.title}
 						</a>
 					{/if}
 				</li>

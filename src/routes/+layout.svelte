@@ -6,7 +6,7 @@
 	import { page } from '$app/state';
 </script>
 
-<main class="min-h-screen flex flex-col">
+<main class="flex min-h-screen flex-col">
 	<!-- Navbar -->
 	<header class="bg-white shadow">
 		<Navbar />

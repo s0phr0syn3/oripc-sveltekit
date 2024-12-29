@@ -23,7 +23,7 @@
 		{ name: 'REGENCE BCBS PREFERRED PROVIDER NETWORK FEP', url: 'https://www.regence.com' },
 		{ name: 'MULTIPLAN', url: 'https://www.multiplan.com' },
 		{ name: 'PACIFICSOURCE', url: 'https://www.pacificsource.com' },
-		{ name: 'UNITED HEALTHCARE', url: 'https://www.uhc.com' },
+		{ name: 'UNITED HEALTHCARE', url: 'https://www.uhc.com' }
 	];
 
 	const nonContractedProviders = [
@@ -32,8 +32,11 @@
 		{ name: 'HEALTHNET MEDICARE ADVANTAGE', url: 'https://www.healthnet.com' },
 		{ name: 'LIFEWISE/PREMERA', url: 'https://www.lifewiseor.com' },
 		{ name: 'MODA BEACON', url: 'https://www.modahealth.com' },
-		{ name: 'WA DEPT OF SOCIAL AND HEALTH SERVICES (MEDICAID)', url: 'https://www.dshs.wa.gov/altsa/home-and-community-services/medicaid' },
-		{ name: 'WA DOLI', url: 'https://lni.wa.gov/insurance/' },
+		{
+			name: 'WA DEPT OF SOCIAL AND HEALTH SERVICES (MEDICAID)',
+			url: 'https://www.dshs.wa.gov/altsa/home-and-community-services/medicaid'
+		},
+		{ name: 'WA DOLI', url: 'https://lni.wa.gov/insurance/' }
 	];
 </script>
 
@@ -41,23 +44,31 @@
 	<title>{generateTitle('Participating Insurance Plans')}</title>
 </svelte:head>
 
-
-<div class="bg-header text-white py-12 text-center">
+<div class="bg-header py-12 text-center text-white">
 	<h1 class="text-3xl font-bold">Participating Insurance Plans</h1>
 </div>
 
-<section class="max-w-4xl mx-auto py-10 px-4 text-gray-700 leading-relaxed">
-	<h2 class="text-xl font-bold mb-4">Our Accepted Insurance Plans</h2>
+<section class="mx-auto max-w-4xl px-4 py-10 leading-relaxed text-gray-700">
+	<h2 class="mb-4 text-xl font-bold">Our Accepted Insurance Plans</h2>
 	<p>
-		At Oregon Interventional Pain Consultants, we accept a variety of insurance plans and are Medicare participating providers. To ensure a seamless experience, we recommend contacting your insurance carrier before your first visit. If your plan requires a referral, please obtain one from your physician prior to your appointment.
+		At Oregon Interventional Pain Consultants, we accept a variety of insurance plans and are
+		Medicare participating providers. To ensure a seamless experience, we recommend contacting your
+		insurance carrier before your first visit. If your plan requires a referral, please obtain one
+		from your physician prior to your appointment.
 	</p>
 	<p class="mt-4">
-		For assistance or questions, contact us at <a href="tel:+15034775205" class="text-blue-600 hover:underline">(503) 477-5205</a>.
+		For assistance or questions, contact us at <a
+			href="tel:+15034775205"
+			class="text-blue-600 hover:underline">(503) 477-5205</a
+		>.
 	</p>
 
-	<h3 class="text-lg font-semibold mt-6">Contracted Insurance Providers</h3>
-	<p class="text-sm text-gray-600">*Note: This list is current as of December 24, 2024. At this time, we are closed to new Oregon Health Plan patients except for those requiring management of their intrathecal pumps.</p>
-	<ul class="list-disc pl-5 mt-4">
+	<h3 class="mt-6 text-lg font-semibold">Contracted Insurance Providers</h3>
+	<p class="text-sm text-gray-600">
+		*Note: This list is current as of December 24, 2024. At this time, we are closed to new Oregon
+		Health Plan patients except for those requiring management of their intrathecal pumps.
+	</p>
+	<ul class="mt-4 list-disc pl-5">
 		{#each contractedProviders as provider}
 			<li>
 				<a href={provider.url} target="_blank" class="text-blue-600 hover:underline">
@@ -67,8 +78,8 @@
 		{/each}
 	</ul>
 
-	<h3 class="text-lg font-semibold mt-6">Non-Contracted Insurance Providers</h3>
-	<ul class="list-disc pl-5 mt-4">
+	<h3 class="mt-6 text-lg font-semibold">Non-Contracted Insurance Providers</h3>
+	<ul class="mt-4 list-disc pl-5">
 		{#each nonContractedProviders as provider}
 			<li>
 				<a href={provider.url} target="_blank" class="text-blue-600 hover:underline">

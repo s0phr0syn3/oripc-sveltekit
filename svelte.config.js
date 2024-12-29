@@ -11,7 +11,7 @@ const config = {
 		}),
 		paths: {
 			base: '' // Use this if your site is deployed at the root
-		},
+		}
 	}
 };
 
