@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { generateTitle } from '$lib/utils';
   export let physicians = [
     {
       name: 'Stuart Rosenblum',
@@ -19,6 +20,10 @@
     },
   ];
 </script>
+
+<svelte:head>
+  <title>{generateTitle('Our Physicians & Staff')}</title>
+</svelte:head>
 
 <div class="bg-header text-white py-12 text-center">
   <h1 class="text-3xl font-bold">Our Physicians & Staff</h1>

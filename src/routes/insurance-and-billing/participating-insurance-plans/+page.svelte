@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let title = 'Participating Insurance Plans';
+	import { generateTitle } from '$lib/utils';
 
 	const contractedProviders = [
 		{ name: 'AETNA', url: 'https://www.aetna.com' },
@@ -37,8 +37,13 @@
 	];
 </script>
 
+<svelte:head>
+	<title>{generateTitle('Participating Insurance Plans')}</title>
+</svelte:head>
+
+
 <div class="bg-header text-white py-12 text-center">
-	<h1 class="text-3xl font-bold">{title}</h1>
+	<h1 class="text-3xl font-bold">Participating Insurance Plans</h1>
 </div>
 
 <section class="max-w-4xl mx-auto py-10 px-4 text-gray-700 leading-relaxed">

@@ -1,9 +1,13 @@
 <script lang="ts">
-  export let title = 'Patient Education';
+  import { generateTitle } from '$lib/utils';
 </script>
 
+<svelte:head>
+  <title>{generateTitle('Patient Education')}</title>
+</svelte:head>
+
 <div class="bg-header text-white py-12 text-center">
-  <h1 class="text-3xl font-bold">{title}</h1>
+  <h1 class="text-3xl font-bold">Patient Education</h1>
 </div>
 
 <section class="max-w-4xl mx-auto py-10 px-4 text-gray-700 leading-relaxed">

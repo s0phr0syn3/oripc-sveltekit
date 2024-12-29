@@ -1,11 +1,14 @@
 <script lang="ts">
-  export let title = 'Oregon Interventional Pain Consultants';
-  export let subtitle = 'Comprehensive Pain Management Solutions';
+  import { generateTitle } from '$lib/utils';
 </script>
 
+<svelte:head>
+	<title>{generateTitle('Home')}</title>
+</svelte:head>
+
 <div class="bg-header text-white text-center py-16">
-  <h1 class="text-4xl font-bold">{title}</h1>
-  <p class="mt-4 text-lg">{subtitle}</p>
+  <h1 class="text-4xl font-bold">Oregon Interventional Pain Consultants</h1>
+  <p class="mt-4 text-lg">Comprehensive Pain Management Solutions</p>
 </div>
 
 <section class="max-w-4xl mx-auto py-10 px-4">
